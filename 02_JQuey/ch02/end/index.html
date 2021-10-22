@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Jump for Joy</title> 
+		<link href="styles/my_style.css" rel="stylesheet">
+	</head> 
+	<body>
+		<a style="text-align: left;" href="../../ch01/end/index.html"> previous</a>
+		<a style="text-align: center;" href="../begin/index.html"> begin</a>
+		<a style="text-align: right;" href="../../ch03/end/index.html"> Next - 3 page</a>
+		<h3>Math </h3>
+		<h4>floor 매서드는 가장 가까운 정수를 반환 ! </h4>
+		<h4>random 매서드는 0 ~ 1 사이의 랜덤한 숫자를 반환 ! </h4>
+		<div id="header">
+			<h2>Jump for Joy Sale</h2>
+		
+
+		</div>
+		<div id="main">
+			<div class="guess_box"><img src="images/jump1.jpg"/></div>
+			<div class="guess_box"><img src="images/jump2.jpg"/></div>
+			<div class="guess_box"><img src="images/jump3.jpg"/></div>
+			<div class="guess_box"><img src="images/jump4.jpg"/></div>
+		</div>
+
+		
+		
+		<script src="scripts/jquery-1.6.2.min.js"></script>
+		<script>
+			$(document).ready(function() {
+				$(".guess_box").click( function() {
+					$(".guess_box p").remove();
+					const discount = Math.floor((Math.random()*5) + 5);
+					const discount_msg = "<p>Your Discount is "+discount+"%</p>";
+					$(this).append(discount_msg);
+				});
+			});
+		</script>
+	</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<h1>1. 웹페이지 액션</h1>
+		<title>Furry Friends Campaign</title>
+		<link rel="stylesheet" type="text/css" href="styles/my_style.css">
+	</head>
+	<body>
+		<div id="clickMe">Show me the the Furry Friend of the Day</div>
+		<div id="text">
+			- 슬라이드 - <br>
+			slideUp() : 요소의 높이를 0이 될때까지 줄이고 숨김 <br>
+			slideUp() : 요소의 높이를 원래값으로 만듬 <br>
+			------------------------------------------------- <br>
+			- 페이드 - <br>
+			fadeIn() : 투명상태에서 불투명상태로 만드는것 ()안에 밀리초(ms)를 사용 <br>
+			fadeOut(), fateTo(), fadeToggle() 까지 총 4가지
+		</div>
+		
+		<div id="picframe">
+			<img src="images/furry_friend.jpg">
+		</div>
+		<div style="margin-bottom: 200px;"></div>
+		<a href="../../ch02/end/index.html"> NEXT - 2 page</a>
+		<script src="scripts/jquery-1.6.2.min.js"></script>
+		<script>
+			$(document).ready(function(){
+				$("#clickMe").click(function() {
+					$("img").fadeIn(1000);
+					$("#picframe").slideToggle("slow");
+				});
+
+				$("#clickMe02").click(function() {
+					$("#img02").fadeIn(1000);
+					$("#picframe02").slideDown("slow");
+				});
+			});
+		</script>
+	</body>
+</html>

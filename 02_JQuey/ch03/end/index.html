@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Jump for Joy</title> 
+		<link href="styles/my_style.css" rel="stylesheet">
+	</head> 
+	<body>
+
+		<a style="text-align: left;" href="../../ch02/end/index.html"> previous</a>
+		<a style="text-align: center;" href="../begin/index.html"> begin</a>
+		<a style="text-align: right;" href="../../ch04/end/index.html"> Next - 3 page</a>
+
+		<h4 style="color: red">이벤트 제거 : $("#myElement").unbind("click");</h4>
+		<h4 style="color: red">모든 이벤트 제거 : $("#myElement").unbind();</h4>
+		<h4>요소 전체에 대해 루프 : $("#myElement").each(function(){<br>
+		&nbsp;&nbsp;	$(this).unbind("click");	<br>
+		});</h4>
+		<h4>$contains(document.body, document.getElementById("header"))</h4>
+		<h4>$.contains 매서드란? 첫번째 매개변수의 자식 요소를 확인하면서 그중 두번째 매개변수가 들어있는지 확인</h4>
+		<br>
+		<div style="border-bottom: 1px solid red; width: 1100px;"></div>
+		<h4 style="color: red">$("#myElement").addClass("hover") : 클래스 추가</h4>
+		<h4 style="color: red">$("#myElement").removeClass("hover") : 클래스 제거</h4>
+		<h4>$(".guess_box").each(function(index, value) {} index =>  루프에서 현재 위치, value = 는 현재 요소 this 와 마찬가지
+		</h4><h4>return false; // return 은 루프에서 빠져나가는 함수 탈출 - break 는 루프 탈출</h4>
+		<div id="header">
+		
+			<h2>Jump for Joy Sale</h2>
+		</div>
+		<div id="main">
+			<div class="guess_box"><img src="images/jump1.jpg"/></div>
+			<div class="guess_box"><img src="images/jump2.jpg"/></div>
+			<div class="guess_box"><img src="images/jump3.jpg"/></div>
+			<div class="guess_box"><img src="images/jump4.jpg"/></div>
+			<span id="result"></span>
+		</div>
+		
+		<script src="scripts/jquery-1.6.2.min.js"></script>
+		<script src="scripts/my_scripts.js"></script>
+	</body>
+</html>

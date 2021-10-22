@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Our Menu</title> 
+		<link type="text/css" href="styles/my_style.css" rel="stylesheet" />
+	</head>
+	<body>
+		<a style="text-align: left;" href="../../ch03/end/index.html"> previous</a>
+		<a style="text-align: center;" href="../begin/index.html"> begin</a>
+		<a style="text-align: right;" href="../../ch05/end/index.html"> Next - 3 page</a>
+		<h2>* 웹 페이지 조작</h2>
+		<h4>$("img#thumbnail").remove(); Dom 에서 요소를 완전히 제거</h4>
+		<h4>$("img#thumbnail").detach(); Dom 에서 제거하지만 요소를 기억해놨다가 다시 삽입 가능</h4>
+		<h4 style="color: red;"> 변수에 저장 $f = $("img#thumbnail").detach(); </h4>
+		<h4 style="color: blue;">$f - $를 붙이면 JQuery 에서 반환하는 요소를 저장하는 변수라는 뜻</h4>
+		<br>
+		<h2>* 요소 선택</h2>
+		<h4>$(".fish").parent() : fish 클래스 요소를 모두 선택후 요소 위에 있는 부모 요소 선택 </h4>
+		<h4>$(".fish").children() : fish 클래스 요소를 모두 선택후 요소 아래에 있는 자식 요소 선택</h4>
+		<h4>$(".fish").prev() : fish 클래스 요소를 모두 선택후 요소 왼쪽에 있는 형제 요소 선택</h4>
+		<h4>$(".fish").next() : fish 클래스 요소를 모두 선택후 요소 오른쪽에 있는 형제 요소 선택</h4>
+		<h4>$(".fish").parent().next().remove()</h4>
+		<h4>여러개 붙여서 사용 가능 </h4>
+		<br>
+		<h2>* 요소 심화단계</h2>
+		<h4>요소 내용을 지우려면 $("p").empty();</h4>
+		<h4>요소에서 가장 가까운 부모요소 검색 : $("li").closest("ui");</h4>
+		<h4>조상요소 모두 선택 : $("p").parents()</h4>
+		<h4>같은 레벨에 있는 요소 모두 선택 : $("li").siblings()</h4>
+		<br>
+		<h2>* 재배치</h2>
+		<h4>$("h2").replaceWith("&lt;h1&gt; 내용 제배치 &lt;/h1&gt;") : replaceWith 내용 재배치 - 1:1 대체에서는 좋지만, 다:1은 모두 기억 못함</h4>
+		<h4>$("meat").before("&lt;h1&gt; 요소를 앞에 삽입 &lt;/h1&gt;") , $("meat").after("&lt;h1&gt; 요소를 뒤에 삽입 &lt;/h1&gt;") </h4>
+		<h4>요소를 뒤에 추가한 후, detach() 로 변수에 저장 - $h = $(".meat").detach(); 을 하면 모든 값이 배열로 저장됌 </h4>
+		<br>
+		<h2>* 필터 메서드</h2>
+		<h4>    $(".menu_list").children().first().detach();		</h4>
+		<h4>.first() : 첫번째 요소만 선택 , .eq(숫자-0번부터) : 괄호안의 숫자에 해당하는 요소만 선택, .last() : 마지막 요소만 선택</h4>
+		<h4>.slice(start(숫자 1번 부터),end) : 시작 숫자(미포함) ~ 마지막 숫자(포함) 요소를 선택</h4>
+		<h4>  .filter(".meat") : 지정한 선택자와 일치하는 요소를 찾음 - 한개가 아니라 관련된것 모두,   .not(".meat") : 해당 선택자 이외의 모든것</h4>
+		<br>
+		<h4>each(function() {} ) 에서 function(i) 를 넣으면 i가 0부터  1씩 증가</h4>
+		<div class="menu_wrapper">
+			<header class="topper">
+				
+				<h2>Our Menu</h2>
+				<nav>
+					<button id="vegOn">Go Vegetarian</button>
+					<button id="restoreMe">Restore Menu</button>
+				</nav>
+			</header>
+			<div class="left_col">
+				<h4>Dinner Entrees</h4>
+				<ul class="menu_entrees">		
+					<li>Poached Salmon
+						<ul class="menu_list">
+							<li class="fish">salmon</li>
+							<li>white wine</li>
+							<li>salt</li>
+							<li>black pepper </li>
+						</ul>
+					</li>
+					<li>Roasted Trout
+						<ul class="menu_list">
+							<li class="fish">grilled trout</li>
+							<li>mint</li>
+							<li>capers</li>
+							<li>olives</li>
+							<li>tomato</li>
+							<li>lemon</li>
+							<li>olive oil</li>
+							<li>potatoes </li>
+						</ul>
+					</li>
+					<li>Thai-style Halibut
+						<ul class="menu_list">
+							<li>coconut milk</li>
+							<li class="fish">pan-fried halibut</li>
+							<li>lemongrass broth</li>
+							<li>early autumn vegetables</li>
+							<li>Thai spices </li>
+						</ul>
+					</li>
+					<li>Braised Delight
+						<ul class="menu_list">
+							<li class="meat">lamb shoulder</li>
+							<li class="veg_leaf">cipolinni onions</li>
+							<li>carrots</li>
+							<li>baby turnip</li>
+							<li>roasted red grapes</li>
+							<li>braising jus</li>
+						</ul>
+					</li>
+					<li>House Grilled Panini
+						<ul class="menu_list">
+							<li class="meat">proscuttio</li>
+							<li>provolone</li>
+							<li>avocado</li>
+							<li>cherry tomatoes</li>
+							<li>sourdough roll</li>
+							<li>shoestring fries </li>
+						</ul>
+					</li>
+					<li>House Slider
+						<ul class="menu_list">
+							<li>marinated eggplant</li>
+							<li>zucchini</li>
+							<li class="hamburger">hamburger</li>
+							<li>balsamic vinaigrette</li>
+							<li>onion</li>
+							<li>carrots</li>
+							<li>Multi-grain roll</li>
+							<li>goat cheese</li>
+						</ul>
+					</li>
+					<li>Southwest Slider
+						<ul class="menu_list">
+							<li>whole chiles</li>
+							<li class="hamburger">hamburger</li>
+							<li>pepperjack cheese</li>
+							<li>onion</li>
+							<li>carrots</li>
+							<li>sliced avocado</li>
+							<li>Multi-grain roll</li>
+						</ul>
+					</li>
+					<li>Frittata
+						<ul class="menu_list">
+							<li class="meat">eggs</li>
+							<li>asiago, provolone, and romano cheeses</li>
+							<li>potatoes </li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+	 
+			<div class="right_col">
+				<h4>Soups and Sides</h4>
+				<ul class="menu_entrees">
+					<li>Coconut Soup
+						<ul class="menu_list">
+							<li>coconut milk</li>
+							<li class="meat">chicken</li>
+							<li>vegetable broth</li>
+						</ul>
+					</li>
+					<li>Soup Du Jour
+						<ul class="menu_list">
+							<li class="meat">grilled steak</li>
+							<li>mushrooms</li>
+							<li>seasonal vegetables</li>
+							<li>vegetable broth </li>
+						</ul>
+					</li>
+					<li>Hot and Sour Soup
+						<ul class="menu_list">
+							<li class="meat">roasted pork</li>
+							<li>carrots</li>
+							<li>Chinese mushrooms</li>
+							<li>chili</li>
+							<li>vegetable Broth </li>
+						</ul>
+					</li>
+					<li>Stuffed Baked Potato
+						<ul class="menu_list">
+							<li>potato</li>
+							<li class="meat">charbroiled or blackened chicken</li>
+							<li>seasonal veggies</li>
+							<li>cheddar &amp; jack cheese</li>
+							<li>creamy alfredo sauce</li>
+						</ul>
+					</li>
+					<li>Avocado Rolls
+						<ul class="menu_list">
+							<li> Avocado</li>
+							<li>Whole chiles</li>
+							<li>Sweet red peppers</li>
+							<li>Ginger dipping sauce</li>
+						</ul>
+					</li>
+					<li>Roasted Artichoke Hearts
+						<ul class="menu_list">
+							<li>Artichoke hearts</li>
+							<li>Balsamic vinegar</li>
+							<li>Steamed garlic</li>
+						</ul>
+					</li>
+					<li>Garlic Broccoli
+						<ul class="menu_list">
+							<li>Stir Fried Broccoli</li>
+							<li>Carrots</li>
+							<li>Onions</li>
+							<li>Garlic Sauce </li>
+						</ul>
+					</li>
+					<li>Stir-Fried Garlic Vegetables
+						<ul class="menu_list">
+							<li>Stir Fried Mixed Vegetables</li>
+							<li>Mushrooms</li>
+							<li>Carrots</li>
+							<li>Onions</li>
+							<li>Garlic </li>
+						</ul>
+					</li>
+					<li>Garlic Green Beans with Mushrooms
+						<ul class="menu_list">
+							<li>Stir Fried Green Beans</li>
+							<li>Carrots</li>
+							<li>Onions</li>
+							<li>Mushrooms </li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+			<footer class="bottom">
+				<h5>Address</h5>
+			</footer>
+		</div> 
+		<script src="scripts/jquery-1.6.2.min.js"></script>
+		<script src="scripts/my_scripts.js"></script>
+	</body>
+</html>
